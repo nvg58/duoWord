@@ -46,7 +46,7 @@ var GameOverLayer = cc.LayerColor.extend({
     var newScoreLbn = cc.LabelTTF.create("0", f_lato, 20);
     newScoreLbn.setColor(cc.WHITE);
     newScoreLbn.setString(score);
-    newScoreLbn.setPosition(cc.p(gameoverDlg.getContentSize().width / 2 + 10, gameoverDlg.getContentSize().height / 2.5));
+    newScoreLbn.setPosition(cc.p(gameoverDlg.getContentSize().width / 2 + 17, gameoverDlg.getContentSize().height / 2.5));
 
     gameoverDlg.addChild(bestScoreLbn);
     gameoverDlg.addChild(newScoreLbn);
