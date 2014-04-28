@@ -33,10 +33,14 @@ var GameOverLayer = cc.LayerColor.extend({
       sys.localStorage.setItem("BestScore", bestScore);
     }
 
+    best = score > best ? score : best;
 
     var bestScoreLbn = cc.LabelTTF.create("0", f_lato, 20);
     bestScoreLbn.setColor(cc.WHITE);
-    bestScoreLbn.setString(bestScore);
+    if (bestScore != null)
+       bestScoreLbn.setString(bestScore);
+    else
+      bestScoreLbn.setString(best);
     bestScoreLbn.setPosition(cc.p(gameoverDlg.getContentSize().width / 2 + 17, gameoverDlg.getContentSize().height / 5));
 
     var newScoreLbn = cc.LabelTTF.create("0", f_lato, 20);
