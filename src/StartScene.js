@@ -37,7 +37,7 @@ var StartLayer = cc.LayerColor.extend({
     startBtn.setPosition(centerPos);
     plus.setPosition(cc.p(screenSize.width / 2 - offsetX, screenSize.height / 2 - offsetY));
     multi.setPosition(cc.p(screenSize.width / 2 + offsetX, screenSize.height / 2 - offsetY));
-    var menu = cc.Menu.create(startBtn, plus, multi);
+    var menu = cc.Menu.create(startBtn);
     menu.setPosition(cc.p(0, 0));
     this.addChild(menu);
   },
