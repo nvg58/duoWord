@@ -107,8 +107,8 @@ var PlayLayer = cc.LayerColor.extend({
 
     var firstWord = [["I", "You", "We", "They"], ["She", "He", "It"]];
 
-    var secondWord = [["want", "go", "do", "take", "come", "say", "talk", "tell", "speak", "carry", "catch", "answer", "bring"],
-                      ["wants", "goes", "does", "takes", "comes", "says", "talks", "tells", "speaks", "carries", "catches", "answers", "brings"]];
+    var secondWord = [["want", "go", "do", "take", "come", "say", "talk", "tell", "speak", "carry", "catch", "answer", "bring", "call", "forget", "watch", "like", "love", "have", "wish", "understand"],
+                      ["wants", "goes", "does", "takes", "comes", "says", "talks", "tells", "speaks", "carries", "catches", "answers", "brings", "calls", "forgets", "watches", "likes", "loves", "has", "wishes", "understands"]];
 
     var i1 = this.random01(0.5);
     cc.log(i1);
