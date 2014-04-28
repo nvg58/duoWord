@@ -26,44 +26,44 @@ var e_reload = "res/reload.mp3";
 var TAG_PLAY_SCENE = 10;
 var TAG_GAME_OVER = 11;
 var TAG_START_SCENE = 12;
-var mode; 
+var mode;
 var PLUS = 0;
 var MULTI = 1;
 var best = 0;
 
 var g_resources = [
-  //image
-  {src: s_HelloWorld},
-  {src: s_CloseNormal},
-  {src: s_CloseSelected},
-  {src: s_start_n},
-  {src: s_start_s},
-  {src: s_plus_n},
-  {src: s_plus_s},
-  {src: s_multi_n},
-  {src: s_multi_s},
-  {src: s_restart_n},
-  {src: s_restart_s},
-  {src: s_to_start_s},
-  {src: s_to_start_n},
-  {src: s_gameover},
-  {src: s_right_s},
-  {src: s_right_n},
-  {src: s_wrong_s},
-  {src: s_wrong_n},
-  {src: s_loading},
+    //image
+    {src: s_HelloWorld},
+    {src: s_CloseNormal},
+    {src: s_CloseSelected},
+    {src: s_start_n},
+    {src: s_start_s},
+    {src: s_plus_n},
+    {src: s_plus_s},
+    {src: s_multi_n},
+    {src: s_multi_s},
+    {src: s_restart_n},
+    {src: s_restart_s},
+    {src: s_to_start_s},
+    {src: s_to_start_n},
+    {src: s_gameover},
+    {src: s_right_s},
+    {src: s_right_n},
+    {src: s_wrong_s},
+    {src: s_wrong_n},
+    {src: s_loading},
 
-  //plist
+    //plist
 
-  //fnt
+    //fnt
 //  {src: f_lato}
-  //tmx
+    //tmx
 
-  //bgm
+    //bgm
 
-  //effect
-  {src: e_passed},
-  {src: e_fail},
-  {src: e_reload}
+    //effect
+    {src: e_passed},
+    {src: e_fail},
+    {src: e_reload}
 
 ];
