@@ -152,7 +152,7 @@ var PlayLayer = cc.LayerColor.extend({
       }
   },
   update:function(dt){
-    dt = 1.2;
+    dt = 1.2 + (score % 10) * 0.2;
     var now = cooldown.getPercentage();
 //    cc.log(now);
     cooldown.setPercentage(now - dt);
