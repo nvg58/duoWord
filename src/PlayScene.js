@@ -70,6 +70,7 @@ var PlayLayer = cc.LayerColor.extend({
 //      cooldown.setBarChangeRate(cc.p(0, 0.5));
         this.addChild(cooldown, 2, TG_TIMER);
 
+        score = 0;
         this.setup();
     },
     loadGameOverLayer: function () {
