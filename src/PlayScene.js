@@ -15,8 +15,6 @@ var PlayLayer = cc.LayerColor.extend({
         this.keyboardArrows = {
             left: false,
             right: false,
-            up: false,
-            down: false
         }
     },
     init: function () {
@@ -69,13 +67,8 @@ var PlayLayer = cc.LayerColor.extend({
         cooldown.setPosition(screenSize.width / 2, screenSize.height - 6);
         cooldown.setType(cc.PROGRESS_TIMER_TYPE_BAR);
         cooldown.setMidpoint(cc.p(0, 1));
-//    cooldown.setBarChangeRate(cc.p(0, 0.5));
+//      cooldown.setBarChangeRate(cc.p(0, 0.5));
         this.addChild(cooldown, 2, TG_TIMER);
-
-        score = 0;
-        first = 0;
-        second = 0;
-        // res = 0;
 
         this.setup();
     },
@@ -103,9 +96,6 @@ var PlayLayer = cc.LayerColor.extend({
         var r = Math.floor((Math.random() * colorArr.length));
         this.setColor(colorArr[r]);
 
-        // var delta = [-5, -4, -3, -2, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 5];
-
-        // var range = (mode == PLUS) ? delta.length : delta.length/2;
         var firstWord = [
             ["I", "You", "We", "They"],
             ["She", "He", "It"]
@@ -124,7 +114,8 @@ var PlayLayer = cc.LayerColor.extend({
         var j2 = Math.floor(Math.random() * secondWord[i2].length);
         second = secondWord[i2][j2];
 
-        res = (i1 == i2);
+//        res = (i1 == i2);
+        
 
         statement.setString(first + " " + second);
         scorelbn.setString(score);
@@ -159,7 +150,7 @@ var PlayLayer = cc.LayerColor.extend({
     update: function (dt) {
         dt = (1.2 + (score % 10) * 0.2);
         var now = cooldown.getPercentage();
-    cc.log(now);
+
         cooldown.setPercentage(now - dt);
         if (now <= 0) {
             this.loadGameOverLayer();
@@ -176,14 +167,8 @@ var PlayLayer = cc.LayerColor.extend({
             case 37:
                 this.keyboardArrows.left = false;
                 break;
-            case 38:
-                this.keyboardArrows.up = false;
-                break;
             case 39:
                 this.keyboardArrows.right = false;
-                break;
-            case 40:
-                this.keyboardArrows.down = false;
                 break;
         }
     },
@@ -193,15 +178,9 @@ var PlayLayer = cc.LayerColor.extend({
                 this.keyboardArrows.left = true;
                 this.onRightTouch();
                 break;
-            case 38:
-                this.keyboardArrows.up = false;
-                break;
             case 39:
                 this.keyboardArrows.right = true;
                 this.onWrongTouch();
-                break;
-            case 40:
-                this.keyboardArrows.down = false;
                 break;
         }
     }
