@@ -115,7 +115,10 @@ var PlayLayer = cc.LayerColor.extend({
         second = secondWord[i2][j2];
 
 //        res = (i1 == i2);
-        
+        if (score % 2 == 0)
+            res = true;
+        else
+            res = false;
 
         statement.setString(first + " " + second);
         scorelbn.setString(score);
