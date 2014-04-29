@@ -80,6 +80,7 @@ var PlayLayer = cc.LayerColor.extend({
         this.setup();
     },
     loadGameOverLayer: function () {
+        this.unscheduleUpdate();
         if (this.gameoverLayerLoaded)
             return;
 //    cc.Director.getInstance().pause();
@@ -98,6 +99,7 @@ var PlayLayer = cc.LayerColor.extend({
         this.failSound();
     },
     setup: function () {
+//        this.unscheduleUpdate();
         var r = Math.floor((Math.random() * colorArr.length));
         this.setColor(colorArr[r]);
 
@@ -122,7 +124,7 @@ var PlayLayer = cc.LayerColor.extend({
         var j2 = Math.floor(Math.random() * secondWord[i2].length);
         second = secondWord[i2][j2];
 
-        res = i1 == i2;
+        res = (i1 == i2);
 
         statement.setString(first + " " + second);
         scorelbn.setString(score);
@@ -157,11 +159,10 @@ var PlayLayer = cc.LayerColor.extend({
     update: function (dt) {
         dt = (1.2 + (score % 10) * 0.2);
         var now = cooldown.getPercentage();
-//    cc.log(now);
+    cc.log(now);
         cooldown.setPercentage(now - dt);
         if (now <= 0) {
             this.loadGameOverLayer();
-            this.unscheduleUpdate();
         }
     },
     passedSound: function () {
